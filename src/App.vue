@@ -1,11 +1,23 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <NavBar/>
+  <main class="container-fluid">
+    <router-view/>
+  </main>
+  <Footer/>
 </template>
 
+<script>
+
+import NavBar from './components/NavBar.vue';
+import Footer from './components/Footer.vue';
+
+export default {
+  components: {
+    NavBar,
+    Footer
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -26,5 +38,6 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+  padding: 20px;
 }
 </style>
