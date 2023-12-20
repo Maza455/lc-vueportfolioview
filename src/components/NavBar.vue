@@ -22,7 +22,7 @@
           <router-link to="/project" class="nav-link" href="#">Projects</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/testimonial" class="nav-link" href="#">Testimonials</router-link>
+          <router-link to="/testimonials" class="nav-link" href="#">Testimonials</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/contact" class="nav-link" href="#">Reach Me</router-link>

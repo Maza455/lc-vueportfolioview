@@ -1,5 +1,6 @@
 <template>
   <NavBar/>
+  <Spinner/>
   <main class="container-fluid">
     <router-view/>
   </main>
@@ -10,15 +11,24 @@
 
 import NavBar from './components/NavBar.vue';
 import Footer from './components/Footer.vue';
+import Spinner from './components/Spinner.vue';
 
 export default {
   components: {
     NavBar,
-    Footer
+    Footer,
+    Spinner
   }
 }
 </script>
-<style>
+
+<style src="@/assets/Css/style.css">
+
+img[alt='logo'] {
+    width: 5rem;
+    aspect-ratio: 1/1;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -33,11 +43,12 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: indigo;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
-  padding: 20px;
+  color: indianred;
 }
+
+
 </style>
