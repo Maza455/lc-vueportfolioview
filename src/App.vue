@@ -25,7 +25,7 @@ export default {
 <style src="@/assets/Css/style.css">
 
 img[alt='logo'] {
-    width: 5rem;
+    width: 3rem;
     aspect-ratio: 1/1;
 }
 
