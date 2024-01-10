@@ -75,13 +75,97 @@ export default {
 </script>
 
 <style scoped>
+/* Add this CSS to your existing scoped style block */
+.card {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: 20px;
+}
+
+.card img {
+  border-radius: 15px 15px 0 0;
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.social-links a {
+  margin: 0 5px;
+  color: #000;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #6c63ff;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 24px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card-buttons a {
+  text-decoration: none;
+  color: #6c63ff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px solid #6c63ff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.card-buttons a:hover {
+  background-color: #6c63ff;
+  color: #fff;
+}
+
+/* Remove the color-changing animation */
 @keyframes changeColorTheme {
   0% {
-    filter: hue-rotate(0deg);
+    filter: none;
   }
-
   100% {
-    filter: hue-rotate(360deg);
+    filter: none;
   }
 }
+
+/* Responsive design for mobile phones */
+@media (max-width: 767px) {
+  .card {
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .card img {
+    max-height: 200px;
+  }
+}
+
 </style>
