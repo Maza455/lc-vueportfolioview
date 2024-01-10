@@ -16,15 +16,17 @@
 
 <script>
 
-import jsonData from '@/store/index';
+import { mapState } from 'vuex';
 
 export default {
-  data() {
-    return {
-      testimonials: jsonData.testimonials
-    };
+  computed: {
+    ...mapState(['homeView', 'aboutMe', 'testimonials', 'projects', 'contact', 'resume'])
+  },
+  mounted() {
+    this.$store.dispatch('fetchData');
   }
-};
+}
+
 </script>
 
 <style scoped>
