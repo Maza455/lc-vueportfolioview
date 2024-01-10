@@ -26,14 +26,14 @@
 </template>
 
 <script>
-import resumeData from '../store/index';
+import { mapState } from 'vuex';
 
 export default {
-  name: 'ResumeView',
-  data() {
-    return {
-      resume: resumeData,
-    };
+  computed: {
+    ...mapState(['homeView', 'aboutMe', 'testimonials', 'projects', 'contact', 'resume'])
   },
-};
+  mounted() {
+    this.$store.dispatch('fetchData');
+  }
+}
 </script>

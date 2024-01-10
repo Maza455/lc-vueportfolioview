@@ -26,19 +26,20 @@
   </template>
   
   <script>
-  import { mapState } from 'vuex';
   
-  export default {
-    computed: {
-      ...mapState(['projects'])
-    },
-    mounted() {
-      this.$store.dispatch('fetchProjects');
-    }
+import { mapState } from 'vuex';
+
+export default {
+  computed: {
+    ...mapState(['homeView', 'aboutMe', 'testimonials', 'projects', 'contact', 'resume'])
+  },
+  mounted() {
+    this.$store.dispatch('fetchData');
   }
-  </script>
+}
+</script>
   
-  <style scoped>
+<style scoped>
   
-  </style>
+</style>
   

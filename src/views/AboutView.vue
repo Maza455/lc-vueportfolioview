@@ -69,7 +69,7 @@
 export default {
   name: 'AboutPage',
   setup() {
-    // You can add any reactive or non-reactive logic here
+
   }
 }
 </script>
