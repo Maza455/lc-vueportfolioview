@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <p class="lead">Zukisa's Portfolio &copy;
+            <p class="lead bg-indigo-500 text-white h-16">Zukisa's Portfolio &copy;
                 <span> {{ currYear }} </span>
             </p>
         </div>
@@ -20,5 +20,7 @@
 </script>
 
 <style scoped>
-
+.bg-indigo-500 {
+    background-color: #4f46e5;
+}
 </style>
