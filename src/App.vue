@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style src="@/assets/Css/style.css">
+<style src="./assets/Css/style.css">
 
 img[alt='logo'] {
     width: 3rem;
