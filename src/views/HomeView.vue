@@ -11,7 +11,7 @@
       </div>
       <div class="col-lg-6">
         <div class="px-4 py-5 text-center">
-          <h1 id="purple-myname" class="display-5 fw-bold">
+          <h1 id="purple-name" class="display-5 fw-bold">
             <b>{{ homeView.name }}</b>
           </h1>
           <div class="hero-text text-dark text-size-50px lead mb-4">

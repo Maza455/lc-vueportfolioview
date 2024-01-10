@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1 class="py-4 text-center" style="padding-top: 20px; padding-bottom: 20px; border-bottom:solid 2px; font-family: sans-serif -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;" id="purple-myname">Experience</h1>
+    <h1 class="py-4 text-center" style="padding-top: 20px; padding-bottom: 20px; border-bottom:solid 2px; font-family: sans-serif -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;" id="purple-name">Experience</h1>
     <div class="container">
       <div class="main-timeline">
         <div v-for="(item, index) in resume.work" :key="index">
@@ -15,7 +15,7 @@
             </div>
             <div class="timeline-content">
               <h4>{{ item.company }}</h4>
-              <h5 id="purple-myname" class="title">{{ item.position }}</h5>
+              <h5 id="purple-name" class="title">{{ item.position }}</h5>
               <p class="description">{{ item.summary }}</p>
             </div>
           </div>
