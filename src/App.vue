@@ -1,10 +1,10 @@
 <template>
-  <NavBar/>
-  <Spinner/>
+  <NavBar />
+  <Spinner />
   <main class="container-fluid">
-    <router-view/>
+    <router-view />
   </main>
-  <Footer/>
+  <Footer />
 </template>
 
 <script>
@@ -23,10 +23,9 @@ export default {
 </script>
 
 <style src="./assets/Css/style.css">
-
 img[alt='logo'] {
-    width: 3rem;
-    aspect-ratio: 1/1;
+  width: 3rem;
+  aspect-ratio: 1/1;
 }
 
 #app {
@@ -49,6 +48,4 @@ nav a {
 nav a.router-link-exact-active {
   color: indianred;
 }
-
-
 </style>
