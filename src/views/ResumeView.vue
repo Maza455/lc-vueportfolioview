@@ -39,3 +39,92 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.timeline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline .icon {
+  display: none;
+}
+
+.timeline .date-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline .date-outer {
+  width: 125px;
+  height: 125px;
+  font-size: 16px;
+  text-align: center;
+  margin: auto;
+  z-index: 1;
+}
+
+.timeline .date-outer:before,
+.timeline .date-outer:after {
+  width: 125px;
+  height: 125px;
+  margin: 0 auto;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.33s ease-out 0s;
+}
+
+.timeline .date-outer:before {
+  background: #fff;
+  border: 2px solid #232323;
+  left: -6px;
+}
+
+.timeline .date-outer:after {
+  border: 2px solid #c6c6c6;
+  left: 6px;
+}
+
+.timeline .date-outer:hover:before {
+  left: 6px;
+}
+
+.timeline .date-outer:hover:after {
+  left: -6px;
+}
+
+.timeline .date {
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  top: 27%;
+  left: 0;
+}
+
+.timeline .month {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.timeline .year {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+  color: #232323;
+  line-height: 36px;
+}
+
+.timeline .timeline-content {
+  padding: 20px;
+  float: none;
+  width: 100%;
+}
+</style>
