@@ -2,13 +2,13 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <router-link to="/">
-        <img class="img-fluid" src="../assets/logo.png">
+        <img class="logo img-fluid" src="../assets/Proctor.png">
     </router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <router-link to="/" class="nav-link active"> Home</router-link>
         </li>
@@ -40,5 +40,17 @@
 </script> -->
 
 <style scoped>
+.logo {
+  width: 6rem;
+  height: 6rem;
+  padding: 1rem;
+  float: left;
+  object-fit: fill;
+  transform: scale(1);
+  transition-property: width;
+  transform: translateY(0px);
+  transition-duration: 5s, 5s;
+  transition: transform 4s, 4s;
+}
 
 </style>

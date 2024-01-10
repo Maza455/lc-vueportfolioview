@@ -1,16 +1,16 @@
 <template>
-  <div class="about">
-    <h1>About Me</h1>
+  <section id="about-page" style="padding-top: 100px; padding-bottom: 130px;">
     <div class="container">
+      <h1 class="text-center" id="about-heading" style="padding-top: 20px; padding-bottom: 20px; border-bottom: 2px solid; font-family: sans-serif; color: purple;">About Me</h1>
       <div class="row">
         <div class="col-md-4 order-md-2">
           <div class="card border-radius-10px">
-            <img id="about-image" class="card-img-top" src="https://i.postimg.cc/jSjN25mc/419043.png" alt="Card image cap">
+            <img id="about-image" class="card-img-top" src="https://i.postimg.cc/PqrhckJL/mazamaza.jpg" alt="Card image cap" style="width: 400px; height: 500px; animation: changeColorTheme 5s linear infinite; max-height: 100%;">
             <div class="card-body">
               <div class="social-links">
-                <a href="your-social-media-link"><i class="fa fa-facebook"></i></a>
-                <a href="your-social-media-link"><i class="fa fa-instagram"></i></a>
-                <a href="your-social-media-link"><i class="fa fa-linkedin"></i></a>
+                <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
               </div>
             </div>
           </div>
@@ -20,17 +20,21 @@
             <div class="card-body">
               <h5 class="card-title">
                 <strong>
-                  <h4 id="purple-name">MeSelf Details</h4>
+                  <h4 id="purple-myname">MeSelf Details</h4>
                 </strong>
               </h5>
-              <h5 v-if="aboutMe">Full name:</h5> <p v-if="aboutMe">{{ aboutMe.fullName }}</p>
-              <h5 v-if="aboutMe">Date of birth:</h5> <p v-if="aboutMe">{{ aboutMe.dateOfBirth }}</p>
-              <h5 v-if="aboutMe">Location:</h5> <p v-if="aboutMe">{{ aboutMe.location }}</p>
-              <h5 v-if="aboutMe">Cell Phone number:</h5> <p v-if="aboutMe">{{ aboutMe.cellPhoneNumber }}</p>
-              <h5 v-if="aboutMe">Email Address:</h5> <p v-if="aboutMe">{{ aboutMe.emailAddress }}</p>
-              <p class="card-text">
-                <small id="purple-name"><button class="btn btn-outline-success" href="your-cv-link" target="_blank">Download CV</button></small>
-              </p>
+              <div class="card-text">
+                <h5>Full name:</h5> Zukisa Eric Maza
+                <h5>Date of birth:</h5> 05/03/****
+                <h5>Location:</h5>Mitchel's plain, Cape Town, WC
+                <h5>Cell Phone number:</h5>0723484826 | 0699950266
+                <h5>Email Address:</h5> maza2pac77@gmail.com <br> eric.maza@umuzi.org
+                <br>
+                <span>⭐⭐⭐</span>
+                <p class="card-text">
+                  <small id="purple-myname"><a class="btn btn-outline-success" href="https://i.postimg.cc/zGbL9HRy/Maza-CV-2023-K-1.png" target="_blank">Download CV</a></small>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -39,28 +43,38 @@
             <div class="card-body">
               <h5 class="card-title">
                 <strong>
-                  <h4 id="purple-name">Bio</h4>
+                  <h4 id="purple-myname">Bio</h4>
                 </strong>
               </h5>
-              <p class="card-text" v-if="aboutMe">
-                {{ aboutMe.bio }}
+              <p class="card-text">
+                Hello! I'm Eric Zukisa Maza, I'm a keen learner and believe in an interdisciplinary approach to understanding the world and I am an ordinary person who has been blessed with extraordinary experiences. I'm a Xhosa guy who once studied Computer Science at the University of Western Cape, but not for long due to finances. Now I'm a good FullStack DEV at Life_Choices.
               </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
-<script setup>
-import { computed, onMounted } from 'vue';
-import { useStore } from 'vuex';
-
-let store = useStore()
-let aboutMe = computed(()=> store.state.about)
-
-onMounted(()=> {
-  store.dispatch('fetchAbout');
-})
+<script>
+export default {
+  name: 'AboutPage',
+  setup() {
+    // You can add any reactive or non-reactive logic here
+  }
+}
 </script>
+
+<style scoped>
+@keyframes changeColorTheme {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+</style>
