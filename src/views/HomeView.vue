@@ -38,7 +38,7 @@
 
 <style scoped>
 .bgimage {
-  background-image: url('../assets/imgs/1661850299234.jpg');
+  background-image: url('../assets/imgs/Maza.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   /* Add any other styles as needed */
