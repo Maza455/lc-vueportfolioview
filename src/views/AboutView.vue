@@ -7,9 +7,7 @@
       <div class="row">
         <div class="col-md-4 order-md-2">
           <div class="card border-radius-10px">
-            <img id="about-image" class="card-img-top" src="../assets/imgs/1662150356528 (1).jpg"
-              alt="Card image cap"
-              style="width: 400px; height: 500px; animation: changeColorTheme 5s linear infinite; max-height: 100%;">
+            <iframe src="https://drive.google.com/file/d/1SfN9GAws-yv3ES3J02MkXGk5Ymd13eCG/preview" width="340" height="480" allow="none"></iframe>
             <div class="card-body">
               <div class="social-links">
                 <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
@@ -37,7 +35,7 @@
                 <span>⭐⭐⭐</span>
                 <p class="card-text">
                   <small id="purple-myname"><a class="btn btn-outline-success"
-                      href="https://i.postimg.cc/zGbL9HRy/Maza-CV-2023-K-1.png" target="_blank">Download CV</a></small>
+                      href="" target="_blank">Download CV</a></small>
                 </p>
               </div>
             </div>
@@ -75,7 +73,6 @@ export default {
 </script>
 
 <style scoped>
-/* Add this CSS to your existing scoped style block */
 .card {
   border: none;
   display: flex;
@@ -88,11 +85,17 @@ export default {
   margin: 20px;
 }
 
-.card img {
+/* .card img {
   border-radius: 15px 15px 0 0;
   width: 100%;
   max-height: 300px;
   object-fit: cover;
+} */
+
+.card img {
+  object-fit: cover; 
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .card-body {
@@ -146,17 +149,7 @@ export default {
   color: #fff;
 }
 
-/* Remove the color-changing animation */
-@keyframes changeColorTheme {
-  0% {
-    filter: none;
-  }
-  100% {
-    filter: none;
-  }
-}
-
-/* Responsive design for mobile phones */
+/* Responsiveness */
 @media (max-width: 767px) {
   .card {
     margin: 10px;
@@ -164,7 +157,43 @@ export default {
   }
 
   .card img {
-    max-height: 200px;
+    max-height: 100px;
+  }
+}
+
+@media (max-width: 575px) {
+  .card-body {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-title {
+    margin-bottom: 0;
+  }
+
+  .card-text {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .card-buttons {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .card-title {
+    font-size: 20px;
+  }
+
+  .card-text {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .card-buttons {
+    margin-top: 5px;
   }
 }
 
