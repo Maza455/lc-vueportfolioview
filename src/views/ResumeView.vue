@@ -3,6 +3,7 @@
     <h1 class="py-4 text-center" id="purple-name">Experience</h1>
     <div class="container">
       <div class="main-timeline">
+        <!-- Existing work experience section -->
         <div v-for="(item, index) in resume.work" :key="index">
           <div class="timeline">
             <div class="icon"></div>
@@ -20,6 +21,7 @@
             </div>
           </div>
         </div>
+        <!-- Existing education section -->
         <div v-for="(item, index) in resume.education" :key="index">
           <div class="timeline">
             <div class="icon"></div>
@@ -37,10 +39,18 @@
             </div>
           </div>
         </div>
+        <!-- New skills section -->
+        <div class="skills">
+          <h2>Skills</h2>
+          <ul>
+            <li v-for="(skill, index) in resume.skills" :key="index">{{ skill.name }}</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 import { mapState } from 'vuex';
