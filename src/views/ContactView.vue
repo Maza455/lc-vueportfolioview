@@ -3,7 +3,7 @@
         <div class="row">
             <h2 class="display-2">Reach Me</h2>
         </div>
-        <div class="row" style="border:solid  1px; padding-top:10px ;  padding-bottom:10px; border-radius: 20px;">
+        <div class="row" style="border:solid 1px; padding-top:10px; padding-bottom:10px; border-radius: 20px;">
             <div class="col-md-9 mb-md-0 mb-5">
                 <form id="contact-form" name="contact-form" action="https://formspree.io/f/xnqklpew" method="POST">
                     <div class="row">
@@ -20,7 +20,7 @@
                             </div>
                         </div>
                     </div>
-                    <div style=" height:110px;" class="row">
+                    <div class="row">
                         <div class="col-md-12">
                             <div class="md-form mb-0">
                                 <input type="text" id="subject" name="subject" class="form-control" required>
@@ -28,7 +28,7 @@
                             </div>
                         </div>
                     </div>
-                    <div style=" height:110px;" class="row">
+                    <div class="row">
                         <div class="col-md-12">
                             <div class="md-form">
                                 <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"
@@ -37,13 +37,14 @@
                             </div>
                         </div>
                     </div>
+                    <div class="text-center text-md-left">
+                        <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+                    </div>
+                    <div class="status"></div>
                 </form>
-                <div class="text-center text-md-left">
-                    <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-                </div>
-                <div class="status"></div>
             </div>
-            <div style="border:solid  1px; padding-top:10px ;;  border-radius: 50px;" class="col-md-3 text-center">
+            <div class="col-md-3 text-center"
+                style="margin-top: 20px; border:solid 1px; padding-top:10px; border-radius: 50px;">
                 <ul class="list-unstyled mb-0">
                     <li>
                         <p> CAMPUS ADDRESS</p>
@@ -69,12 +70,38 @@
             </div>
         </div>
     </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </template>
+
+
   
 <script>
 export default {
-
-}
+    name: 'ContactPage',
+};
 </script>
   
+<style scoped>
+/* body {
+    height: 100vh;
+    overflow: hidden;
+    min-height: 100vh;
+  } */</style>
+
   
