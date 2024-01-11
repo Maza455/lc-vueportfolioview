@@ -1,26 +1,33 @@
 <template>
-    <div class="container">
+    <footer class="color-changing-footer py-3">
+      <div class="container">
         <div class="row">
-            <p class="lead bg-indigo-500 text-white h-16">Zukisa's Portfolio &copy;
-                <span> {{ currYear }} </span>
-            </p>
+          <p class="lead">Zukisa's Portfolio &copy; <span>{{ currYear }}</span></p>
         </div>
-    </div>
-</template>
-
-<script>
-    export default {
-        name: 'FooterComp',
-        data() {
-            return {
-                currYear: new Date().getFullYear()
-            }
-        }
+      </div>
+    </footer>
+  </template>
+  
+  <script>
+  export default {
+    name: 'FooterComp',
+    data() {
+      return {
+        currYear: new Date().getFullYear()
+      }
     }
-</script>
-
-<style scoped>
-.bg-indigo-500 {
-    background-color: #4f46e5;
-}
-</style>
+  }
+  </script>
+  
+  <style scoped>
+  .color-changing-footer {
+    /* Your custom color-changing animation CSS */
+    animation: colorChange 5s infinite;
+  }
+  
+  @keyframes colorChange {
+    0% { background-color: red; }
+    50% { background-color: blue; }
+    100% { background-color: green; }
+  }
+  </style>

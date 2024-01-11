@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-md-4 order-md-2">
           <div class="card border-radius-10px">
-            <iframe src="https://drive.google.com/file/d/1SfN9GAws-yv3ES3J02MkXGk5Ymd13eCG/preview" width="340" height="480" allow="none"></iframe>
+            <a href="https://ibb.co/3h5g031"><img src="https://i.ibb.co/WKNmchn/Proctor.jpg" alt="Proctor" border="0" height="100%"></a>
             <div class="card-body">
               <div class="social-links">
                 <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
