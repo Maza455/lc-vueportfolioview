@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-md-4 order-md-2">
           <div class="card border-radius-10px">
-            <a href="https://ibb.co/3h5g031"><img src="https://i.ibb.co/WKNmchn/Proctor.jpg" alt="Proctor" border="0"
+            <a href="https://ibb.co/3h5g031"><img src="https://i.ibb.co/3h5g031/Proctor.jpg" alt="Proctor" border="0"
                 height="100%"></a>
             <div class="card-body">
               <div class="social-links">
@@ -52,15 +52,16 @@
                 </strong>
               </h5>
               <p class="card-text">
-                Hello! I'm Eric Zukisa Maza, I'm a keen learner and believe in an interdisciplinary approach to
-                understanding the world and I am an ordinary person who has been blessed with extraordinary experiences.
-                I'm a Xhosa guy who once studied Computer Science at the University of Western Cape, but not for long due
-                to finances. Now I'm a good FullStack DEV at Life_Choices.
+                Hello! I'm Eric Zukisa Maza, I'm a keen learner and believe in an interdisciplinary approach to understanding the world and I am an ordinary person who has been blessed with extraordinary experiences.
+                I'm a Xhosa guy who once studied Computer Science at the University of Western Cape, but not for long due to finances. Now I'm a good FullStack DEV at Life_Choices.
               </p>
             </div>
           </div>
         </div>
       </div>
+      
+                <img class="d-block w-100 h-100vh" src="https://i.postimg.cc/HL8pmNvw/dreamstime-m-123641233-1.jpg" alt="Third slide">
+         
     </div>
   </section>
 </template>
@@ -86,13 +87,6 @@ export default {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 20px;
 }
-
-/* .card img {
-  border-radius: 15px 15px 0 0;
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-} */
 
 .card img {
   object-fit: cover;
@@ -151,7 +145,6 @@ export default {
   color: #fff;
 }
 
-/* Responsiveness */
 @media (max-width: 767px) {
   .card {
     margin: 10px;
