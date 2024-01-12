@@ -98,10 +98,24 @@ export default {
 </script>
   
 <style scoped>
-/* body {
-    height: 100vh;
-    overflow: hidden;
-    min-height: 100vh;
-  } */</style>
+/* Add animation to form when submitted */
+@keyframes form-submit {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-primary {
+    animation: form-submit 0.3s ease-in-out;
+}
+</style>
 
   
