@@ -10,7 +10,8 @@
               <h5 class="card-title">{{ project.title }}</h5>
               <p class="card-text">{{ project.description }}</p>
               <a :href="project.githubLink" target="_blank"><button>Github</button></a>
-              <a :href="project.liveDemoLink" target="_blank" @click="openProject(project.liveDemoLink)"><button>{{ project.liveDemoText }}</button></a>
+              <a :href="project.liveDemoLink" target="_blank" @click="openProject(project.liveDemoLink)"><button>{{
+                project.liveDemoText }}</button></a>
             </div>
             <div class="card-footer">
               <button type="button" class="btn btn-muted btn-lg px-4 gap-3">
@@ -44,23 +45,22 @@ export default {
 </script>
 
 <style scoped>
-
 /*Portfolio CSS*/
-#portfolio-page{
-    padding-top: 150px;
-    padding-bottom: 150px;
-    padding-left: 150px;
-    padding-right: 150px;
-}
-#portfolio-row{
-    padding-top: 19px;
-    padding-bottom: 19px;
+#portfolio-page {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  padding-left: 150px;
+  padding-right: 150px;
 }
 
-#portfolio-image{
-    height: 300px;
-    width: 100%;
-    object-fit: cover;
+#portfolio-row {
+  padding-top: 19px;
+  padding-bottom: 19px;
 }
 
+#portfolio-image {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
 </style>

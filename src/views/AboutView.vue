@@ -7,7 +7,8 @@
       <div class="row">
         <div class="col-md-4 order-md-2">
           <div class="card border-radius-10px">
-            <a href="https://ibb.co/3h5g031"><img src="https://i.ibb.co/WKNmchn/Proctor.jpg" alt="Proctor" border="0" height="100%"></a>
+            <a href="https://ibb.co/3h5g031"><img src="https://i.ibb.co/WKNmchn/Proctor.jpg" alt="Proctor" border="0"
+                height="100%"></a>
             <div class="card-body">
               <div class="social-links">
                 <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
@@ -34,8 +35,9 @@
                 <br>
                 <span>⭐⭐⭐</span>
                 <p class="card-text">
-                  <small id="purple-myname"><a class="btn btn-outline-success"
-                      href="" target="_blank">Download CV</a></small>
+                  <small id="purple-myname"><a href="../assets/imgs/MazaCV (2023)..K (1) (2).pdf"
+                      download="Zukisa_Eric_Maza_CV.pdf" target="_blank" class="btn btn-outline-success">
+                      <i class="fa fa-download"></i> Download CV</a></small>
                 </p>
               </div>
             </div>
@@ -81,7 +83,7 @@ export default {
   text-align: center;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 20px;
 }
 
@@ -93,7 +95,7 @@ export default {
 } */
 
 .card img {
-  object-fit: cover; 
+  object-fit: cover;
   max-width: 100%;
   max-height: 100%;
 }
@@ -195,6 +197,4 @@ export default {
   .card-buttons {
     margin-top: 5px;
   }
-}
-
-</style>
+}</style>
