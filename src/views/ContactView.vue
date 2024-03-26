@@ -98,7 +98,6 @@ export default {
 </script>
   
 <style scoped>
-/* Add animation to form when submitted */
 @keyframes form-submit {
     0% {
         transform: scale(1);

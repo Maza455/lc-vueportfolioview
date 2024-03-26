@@ -8,7 +8,7 @@
         <div class="col-md-4 order-md-2">
           <div class="card border-radius-10px">
             <a href="https://ibb.co/3h5g031"><img src="https://i.ibb.co/3h5g031/Proctor.jpg" alt="Proctor" border="0"
-                height="100%"></a>
+                height="30%"></a>
             <div class="card-body">
               <div class="social-links">
                 <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
@@ -86,19 +86,20 @@ export default {
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 20px;
+  height: 100%;
 }
 
 .card img {
   object-fit: cover;
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .card-body {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
 }
 
 .social-links a {
@@ -190,4 +191,5 @@ export default {
   .card-buttons {
     margin-top: 5px;
   }
-}</style>
+}
+</style>

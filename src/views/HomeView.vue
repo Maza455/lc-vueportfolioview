@@ -4,11 +4,11 @@
       <!-- Add overflow: hidden to prevent scrolling -->
       <div class="container-fluid">
         <div class="row align-items-center">
-          <div class="col-lg-6 col-md-6 order-md-2">
+          <div class="col-lg-6 col-md-6 order-md-2 col-12">
             <a href="https://ibb.co/QYFvsx5"><img src="https://i.ibb.co/RQpTLJ5/Maza.jpg" alt="Maza" border="0"
-                style="width: 100%; height: 100vh; object-fit: cover;"></a> <!-- Set image to cover the screen -->
+                style="width: 100%; height: auto;"></a> <!-- Set image to be responsive -->
           </div>
-          <div class="col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6 col-12">
             <div class="px-4 py-5 text-center text-black"> <!-- Change text color to black -->
               <h1 id="purple-myname" class="display-5 fw-bold">
                 <b>Zukisa Eric Maza</b>
@@ -17,10 +17,11 @@
                 <p class="mb-3">I am an Aspiring <b>Fullstack Developer</b>.</p>
                 <p class="mb-3">I offer <b>Website's, Data fixing and Application's</b> services.</p>
                 <p class="mb-0">To know more about MeSelf, <a
-                    href="https://www.linkedin.com/in/eric-zukisa-maza-2376b119b/" style="color: #000;">Let's connect</a>!
+                    href="https://www.linkedin.com/in/eric-zukisa-maza-2376b119b/" style="color: #000;">Let's
+                    connect</a>!
                 </p> <!-- Set link color to black -->
               </div>
-              <div class="d-grid gap-2 d-flex justify-content-center">
+              <div class="d-grid gap-2 d-md-flex justify-content-center">
                 <button type="button" class="btn btn-muted btn-lg px-4 gap-3">
                   <a class="button-link button-link-github" href="https://github.com/Maza455" target="_blank"
                     style="color: #000;"> <!-- Set link color to black -->
@@ -56,7 +57,10 @@
 
 @media (max-width: 991.98px) {
   .hero-text {
-    font-size: 30px;
-    padding: 20px;
+    font-size: 20px;
+    /* Adjust font size for smaller screens */
+    padding: 10px;
+    /* Adjust padding for smaller screens */
   }
-}</style>
+}
+</style>

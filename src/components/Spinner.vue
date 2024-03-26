@@ -1,10 +1,12 @@
 <template>
-<svg class="loading-spinner">
-    <circle :cx="circlePositions[index] && circlePositions[index].x" :cy="circlePositions[index] && circlePositions[index].y" :r="item.radius" :fill="item.color" v-for="(item, index) in circles" :key="index" />
-</svg>
+    <svg class="loading-spinner">
+        <circle :cx="circlePositions[index] && circlePositions[index].x"
+            :cy="circlePositions[index] && circlePositions[index].y" :r="item.radius" :fill="item.color"
+            v-for="(item, index) in circles" :key="index" />
+    </svg>
 </template>
 
-  
+
 <script>
 const CENTER_X = 50;
 const CENTER_Y = 50;
@@ -28,9 +30,9 @@ function calculatePositions(component) {
         positions[index] = positionOnCircle(
             RADIUS,
             angleIncrement * index, {
-                x: CENTER_X,
-                y: CENTER_Y
-            }
+            x: CENTER_X,
+            y: CENTER_Y
+        }
         )
     });
     return positions;
@@ -41,44 +43,45 @@ export default {
     data() {
         return {
             circles: [{
-                    color: '#E0F2F1',
-                    radius: 0
-                },
-                {
-                    color: '#B2DFDB',
-                    radius: 0
-                },
-                {
-                    color: '#80CBC4',
-                    radius: 0
-                },
-                {
-                    color: '#4DB6AC',
-                    radius: 0
-                },
-                {
-                    color: '#26A69A',
-                    radius: 0
-                },
-                {
-                    color: '#00897B',
-                    radius: 0
-                },
-                {
-                    color: '#00796B',
-                    radius: 0
-                },
-                {
-                    color: '#00695C',
-                    radius: 0
-                },
-                {
-                    color: '#004D40',
-                    radius: 0
-                },
+                color: '#E0F2F1',
+                radius: 1
+            },
+            {
+                color: '#B2DFDB',
+                radius: 2
+            },
+            {
+                color: '#80CBC4',
+                radius: 3
+            },
+            {
+                color: '#4DB6AC',
+                radius: 4
+            },
+            {
+                color: '#26A69A',
+                radius: 5
+            },
+            {
+                color: '#00897B',
+                radius: 6
+            },
+            {
+                color: '#00796B',
+                radius: 7
+            },
+            {
+                color: '#00695C',
+                radius: 8
+            },
+            {
+                color: '#004D40',
+                radius: 9
+            },
             ],
             counter: 0,
-            interval: 3
+            interval: null,
+            elapsedTime: 0
         }
     },
     computed: {
@@ -86,20 +89,24 @@ export default {
     },
     created() {
         this.interval = setInterval(() => {
+            this.elapsedTime += 100; // Increment elapsed time by 100 milliseconds
+            if (this.elapsedTime >= 5000) { // 5 seconds in milliseconds
+                clearInterval(this.interval); // Stop the spinner
+            }
             this.counter++;
             this.circles = this.circles.map((item, index) => ({
                 ...item,
                 radius: (this.counter + index) % 8
             }));
-        }, 70);
+        }, 100);
     },
-    // destroyed() {
-    //   clearInterval(this.interval);
-    // }
+    beforeUnmount() {
+        clearInterval(this.interval);
+    }
 }
 </script>
 
-  
+
 <style>
 .loading-spinner {
     width: 100px;

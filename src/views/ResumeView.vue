@@ -38,6 +38,7 @@
               <h4>{{ item.institution }}</h4>
               <h5 id="purple-name" class="title">{{ item.area }}</h5>
               <p class="description">{{ item.studyType }}</p>
+              <h6 class="descript">{{ item.subjects }}</h6>
             </div>
           </div>
         </div>
@@ -74,7 +75,7 @@ export default {
     try {
       this.$store.dispatch('fetchData');
     } catch (error) {
-      console.error('An error occurred while fetching the data: ', error);
+      alert.error('An error occurred while fetching the data: ', error);
       this.$store.commit('setErrorMessage', 'An error occurred while fetching the data. Please try again later.');
     }
   }
@@ -196,6 +197,16 @@ export default {
   margin-bottom: 15px;
 }
 
+.line-divider {
+  margin-bottom: 20px;
+  /* Adjust margin to stop the line above the "Skills" header */
+}
+
+hr {
+  margin: 0;
+  /* Reset default margin */
+}
+
 @media (min-width: 768px) {
   .card-container {
     display: flex;
@@ -209,13 +220,36 @@ export default {
 }
 
 @media (max-width: 767px) {
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
+  .timeline {
+    grid-template-columns: 1fr;
+    /* Display timeline in a single column on smaller screens */
+  }
+
+  .timeline .date-content {
+    justify-content: center;
+    /* Center date content on smaller screens */
+  }
+
+  .timeline .date-outer {
+    width: 100px;
+    /* Reduce date circle size for better fit */
+    height: 100px;
+  }
+
+  .timeline .date-outer:before,
+  .timeline .date-outer:after {
+    width: 100px;
+    height: 100px;
+  }
+
+  .timeline .month {
+    font-size: 16px;
+    /* Adjust font size for better readability */
   }
 
   .card {
     flex: 1 0 calc(50% - 20px);
+    /* Display cards in two columns on smaller screens */
     max-width: calc(50% - 20px);
   }
 }
