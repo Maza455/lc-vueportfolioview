@@ -30,15 +30,15 @@ export default {
 
 @keyframes colorChange {
     0% {
-        background-color: red;
+        background-color: SlateBlue;
     }
 
     50% {
-        background-color: blue;
+        background-color: #E5E4E2;
     }
 
     100% {
-        background-color: green;
+        background-color: #808080;
     }
 }
 

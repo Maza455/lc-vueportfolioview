@@ -31,8 +31,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="md-form">
-                                <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"
-                                    required></textarea>
+                                <textarea type="text" id="message" name="message" rows="2"
+                                    class="form-control md-textarea" required></textarea>
                                 <label for="message">Your message</label>
                             </div>
                         </div>
@@ -62,9 +62,10 @@
                         <i class="fas fa-envelope mt-4 fa-2x"></i>
                         <p>maza2pac77@gmail.com</p>
                         <a style="color: rgb(7, 117, 125);" href="https://github.com/Maza455" target="_blank"><i
-                                class="bi bi-instagram" style="font-size: 3em;padding-bottom: 400px;"></i></a>
-                        <a style="color: rgb(9, 71, 203);" href="https://www.linkedin.com/in/eric-zukisa-maza-2376b119b/"
-                            target="_blank"><i class="bi bi-linkedin" style="font-size: 3em;padding-bottom: 400px;"></i></a>
+                                class="bi bi-github" style="font-size: 3em;padding-bottom: 400px;"></i></a>
+                        <a style="color: rgb(9, 71, 203);"
+                            href="https://www.linkedin.com/in/eric-zukisa-maza-2376b119b/" target="_blank"><i
+                                class="bi bi-linkedin" style="font-size: 3em;padding-bottom: 400px;"></i></a>
                     </li>
                 </ul>
             </div>
@@ -87,6 +88,7 @@
     <br>
     <br>
     <br>
+
 </template>
 
 
@@ -110,11 +112,64 @@ export default {
     100% {
         transform: scale(1);
     }
+
 }
 
 .btn-primary {
     animation: form-submit 0.3s ease-in-out;
 }
-</style>
 
-  
+.row {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.list-unstyled {
+    list-style: none;
+    padding: 0;
+}
+
+.list-unstyled li {
+    margin-bottom: 10px;
+}
+
+i {
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .col-md-9 {
+        width: 100%;
+    }
+
+    .col-md-3 {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+</style>

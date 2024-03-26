@@ -52,16 +52,19 @@
                 </strong>
               </h5>
               <p class="card-text">
-                Hello! I'm Eric Zukisa Maza, I'm a keen learner and believe in an interdisciplinary approach to understanding the world and I am an ordinary person who has been blessed with extraordinary experiences.
-                I'm a Xhosa guy who once studied Computer Science at the University of Western Cape, but not for long due to finances. Now I'm a good FullStack DEV at Life_Choices.
+                Hello! I'm Eric Zukisa Maza, I'm a keen learner and believe in an interdisciplinary approach to
+                understanding the world and I am an ordinary person who has been blessed with extraordinary experiences.
+                I'm a Xhosa guy who once studied Computer Science at the University of Western Cape, but not for long
+                due to finances. Now I'm a good FullStack DEV at Life_Choices.
               </p>
             </div>
           </div>
         </div>
       </div>
-      
-                <img class="d-block w-100 h-100vh" src="https://i.postimg.cc/HL8pmNvw/dreamstime-m-123641233-1.jpg" alt="Third slide">
-         
+
+      <img class="d-block w-100 h-100vh" src="https://i.postimg.cc/HL8pmNvw/dreamstime-m-123641233-1.jpg"
+        alt="Third slide">
+
     </div>
   </section>
 </template>
