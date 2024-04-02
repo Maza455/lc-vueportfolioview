@@ -2,6 +2,13 @@
   <div class="container">
     <div class="row">
       <h2 class="display-2">Projects</h2>
+      <div class="sort-container">
+            <!-- <input type="text" placeholder="Search Product" v-model="searchQuery" @input="searchProducts"> -->
+            <div class="sort-buttons">
+                <button @click="sortBy('desc')" class="sort-button">Sort By Desc</button>
+                <button @click="sortBy('asc')" class="sort-button">Sort By Asc</button>
+            </div>
+      </div>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div v-for="project in projects" :key="project.id" class="col col-md-12 col-md-4 col-lg-4">
           <div class="card h-100">
@@ -60,6 +67,13 @@ export default {
     openProject(url) {
       this.$router.push({ name: 'Project', params: { projectUrl: url } });
     },
+    sortBy(sortType) {
+            if (sortType === 'desc') {
+                this.project.sort((a, b) => b.prodName.localeCompare(a.prodName));
+            } else {
+                this.project.sort((a, b) => a.prodName.localeCompare(b.prodName));
+            }
+    },
     reactToProject(project) {
       project.reacted = !project.reacted;
       if (project.reacted) {
@@ -70,14 +84,36 @@ export default {
     },
     leaveComment(project) {
       console.log('Leaving a comment on project:', project);
-      // Add your logic here to handle leaving a comment on the project
     }
   }
 }
 </script>
 
 <style scoped>
-/*Portfolio CSS*/
+.sort-container {
+    margin-bottom: 20px;
+}
+
+.sort-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.sort-button {
+    padding: 10px 20px;
+    background-color: black;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.sort-button:hover {
+    background-color: indigo;
+}
+
 #portfolio-page {
   padding-top: 150px;
   padding-bottom: 150px;

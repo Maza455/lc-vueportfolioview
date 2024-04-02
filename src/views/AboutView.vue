@@ -35,8 +35,8 @@
                 <br>
                 <span>⭐⭐⭐</span>
                 <p class="card-text">
-                  <small id="purple-myname"><a href="../assets/imgs/MazaCV (2023)..K (1) (2).pdf"
-                      download="Zukisa_Eric_Maza_CV.pdf" target="_blank" class="btn btn-outline-success">
+                  <small id="purple-myname"><a href="../assets/MazaCV (2023)..K (1).pdf"
+                      download="../assets/MazaCV (2023)..K (1).pdf" target="_blank" class="btn btn-outline-success">
                       <i class="fa fa-download"></i> Download CV</a></small>
                 </p>
               </div>
