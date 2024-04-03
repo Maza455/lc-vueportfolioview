@@ -28,10 +28,10 @@
             </router-link>
           </li>
           <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="
+                        <h5 class="nav-item dropdown-toggle" id="
                             navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Resume
-                        </a>
+                        </h5>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><router-link to="/experience" class="dropdown-item">Experience</router-link></li>
                             <li><router-link to="/skills" class="dropdown-item">Skills</router-link></li>
