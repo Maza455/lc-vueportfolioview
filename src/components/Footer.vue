@@ -24,7 +24,6 @@ export default {
   
 <style scoped>
 .color-changing-footer {
-    /* Your custom color-changing animation CSS */
     animation: colorChange 5s infinite;
 }
 

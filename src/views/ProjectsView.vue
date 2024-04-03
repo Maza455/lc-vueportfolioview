@@ -58,6 +58,9 @@ import { mapState } from 'vuex';
 
 export default {
   computed: {
+    projects() {
+            return this.$store.state.projects;
+        },
     ...mapState(['homeView', 'aboutMe', 'testimonials', 'projects', 'contact', 'resume'])
   },
   mounted() {
@@ -69,9 +72,9 @@ export default {
     },
     sortBy(sortType) {
             if (sortType === 'desc') {
-                this.project.sort((a, b) => b.prodName.localeCompare(a.prodName));
+                this.projects.sort((a, b) => b.title.localeCompare(a.title));
             } else {
-                this.project.sort((a, b) => a.prodName.localeCompare(b.prodName));
+                this.projects.sort((a, b) => a.title.localeCompare(b.title));
             }
     },
     reactToProject(project) {

@@ -10,32 +10,32 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <router-link to="/" class="nav-link active">
+                    <router-link to="/" class="nav-link active" @click="collapseNavbar">
                         <h4>Home</h4>
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/about" class="nav-link">
+                    <router-link to="/about" class="nav-link" @click="collapseNavbar">
                         <h4>About</h4>
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/resume" class="nav-link" href="#">
+                    <router-link to="/resume" class="nav-link" @click="collapseNavbar">
                         <h4>Resume</h4>
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/project" class="nav-link" href="#">
+                    <router-link to="/project" class="nav-link" @click="collapseNavbar">
                         <h4>Projects</h4>
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/testimonials" class="nav-link" href="#">
+                    <router-link to="/testimonials" class="nav-link" @click="collapseNavbar">
                         <h4>Testimonials</h4>
                     </router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/contact" class="nav-link" href="#">
+                    <router-link to="/contact" class="nav-link" @click="collapseNavbar">
                         <h4>Reach Me</h4>
                     </router-link>
                 </li>
@@ -65,11 +65,33 @@ export default {
                 body.classList.remove("dark-theme");
             }
         },
+        collapseNavbar() {
+            const navbar = document.querySelector('.navbar-collapse');
+            navbar.classList.remove('show')
+        },
+        scrollToTop() {
+            window.scrollTo(0, 0);
+        }
     },
+    mounted() {
+        this.scrollToTop();
+    },
+    watch: {
+        $route() {
+            this.scrollToTop();
+        }
+    }
 };
 </script>
 
 <style scoped>
+.navbar {
+    position:sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
 .logo {
     width: 6rem;
     height: 6rem;

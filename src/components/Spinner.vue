@@ -1,118 +1,153 @@
 <template>
-    <svg class="loading-spinner">
-        <circle :cx="circlePositions[index] && circlePositions[index].x"
-            :cy="circlePositions[index] && circlePositions[index].y" :r="item.radius" :fill="item.color"
-            v-for="(item, index) in circles" :key="index" />
-    </svg>
+   <div class="loader">
+    <div class="loader-inner">
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+</div>
 </template>
 
 
 <script>
-const CENTER_X = 50;
-const CENTER_Y = 50;
-const RADIUS = 30;
+document.addEventListener('DOMContentLoaded', function () {
+    load();
 
-function positionOnCircle(radius, angle, center) {
-    return {
-        x: center.x + (radius * Math.cos(toRadians(angle))),
-        y: center.y + (radius * Math.sin(toRadians(angle)))
+    function load() {
+        setTimeout(() => {
+            document.querySelector('.loader').classList.add('loaded');
+        }, 3000);
     }
-}
-
-function toRadians(angle) {
-    return angle * Math.PI / 180;
-}
-
-function calculatePositions(component) {
-    let angleIncrement = 360 / component.circles.length;
-    let positions = {};
-    component.circles.forEach((circle, index) => {
-        positions[index] = positionOnCircle(
-            RADIUS,
-            angleIncrement * index, {
-            x: CENTER_X,
-            y: CENTER_Y
-        }
-        )
-    });
-    return positions;
-}
-
-export default {
-    name: 'SpinLoader',
-    data() {
-        return {
-            circles: [{
-                color: '#E0F2F1',
-                radius: 1
-            },
-            {
-                color: '#B2DFDB',
-                radius: 2
-            },
-            {
-                color: '#80CBC4',
-                radius: 3
-            },
-            {
-                color: '#4DB6AC',
-                radius: 4
-            },
-            {
-                color: '#26A69A',
-                radius: 5
-            },
-            {
-                color: '#00897B',
-                radius: 6
-            },
-            {
-                color: '#00796B',
-                radius: 7
-            },
-            {
-                color: '#00695C',
-                radius: 8
-            },
-            {
-                color: '#004D40',
-                radius: 9
-            },
-            ],
-            counter: 0,
-            interval: null,
-            elapsedTime: 0
-        }
-    },
-    computed: {
-        circlePositions: calculatePositions
-    },
-    created() {
-        this.interval = setInterval(() => {
-            this.elapsedTime += 100; // Increment elapsed time by 100 milliseconds
-            if (this.elapsedTime >= 5000) { // 5 seconds in milliseconds
-                clearInterval(this.interval); // Stop the spinner
-            }
-            this.counter++;
-            this.circles = this.circles.map((item, index) => ({
-                ...item,
-                radius: (this.counter + index) % 8
-            }));
-        }, 100);
-    },
-    beforeUnmount() {
-        clearInterval(this.interval);
-    }
-}
+});
 </script>
 
 
 <style>
-.loading-spinner {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.loader {
+  background: #fff;
+  background: radial-gradient(#fff, #fff);
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99999;
+}
+
+.loader-inner {
+  bottom: 0;
+  height: 60px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
+}
+
+.loader-line-wrap {
+  animation: spin 2000ms cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+  box-sizing: border-box;
+  height: 50px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transform-origin: 50% 100%;
+  width: 100px;
+}
+.loader-line {
+  border: 4px solid transparent;
+  border-radius: 100%;
+  box-sizing: border-box;
+  height: 100px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
+}
+.loader-inner-wrap:nth-child(0) {
+    animation-delay: -10ms;
+}
+.loader-line-wrap:nth-child(1) {
+  animation-delay: -50ms;
+}
+.loader-line-wrap:nth-child(2) {
+  animation-delay: -100ms;
+}
+.loader-line-wrap:nth-child(3) {
+  animation-delay: -150ms;
+}
+.loader-line-wrap:nth-child(4) {
+  animation-delay: -200ms;
+}
+.loader-line-wrap:nth-child(5) {
+  animation-delay: -250ms;
+}
+
+.loader-inner-wrap:nth-child(0) .loader-inner {
+    border-color: hsl(60, 80%, 60%);
+    height: 120px;
+    width: 120px;
+    top: 0px;
+}
+.loader-line-wrap:nth-child(1) .loader-line {
+  border-color: hsl(114, 80%, 60%);
+  height: 100px;
+  width: 100px;
+  top: 7px;
+}
+.loader-line-wrap:nth-child(2) .loader-line {
+  border-color: hsl(249, 80%, 60%);
+  height: 80px;
+  width: 80px;
+  top: 14px;
+}
+.loader-line-wrap:nth-child(3) .loader-line {
+  border-color: hsl(313, 80%, 60%);
+  height: 60px;
+  width: 60px;
+  top: 21px;
+}
+.loader-line-wrap:nth-child(4) .loader-line {
+  border-color: hsl(18, 80%, 60%);
+  height: 40px;
+  width: 40px;
+  top: 28px;
+}
+.loader-line-wrap:nth-child(5) .loader-line {
+  border-color: hsl(0, 0%, 4%);
+  height: 20px;
+  width: 20px;
+  top: 35px;
+}
+
+@keyframes spin {
+  0%,
+  15% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+.loaded {
+  display: none;
 }
 </style>

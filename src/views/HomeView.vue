@@ -2,7 +2,6 @@
   <main id="home">
     <section id="landing-page" class="landing-animation bgimage" style="height: 100vh; overflow: hidden">
       <div class="welcome-text">
-        <h1 :style="{ color: textColor }"><b><u><i>Welcome to... Mr Zukisa Maza's Portfolio</i></u></b></h1>
         <div class="stars-animation"></div>
       </div>
       <div class="container-fluid content-container">
@@ -20,7 +19,7 @@
                 <p class="mb-3">I am an Aspiring <b>Fullstack Developer</b>.</p>
                 <p class="mb-3">I offer <b>Website's, Data fixing and Application's</b> services.</p>
                 <p class="mb-0">To know more about MeSelf, <a
-                    href="https://www.linkedin.com/in/eric-zukisa-maza-2376b119b/" style="color: #000;">Let's
+                    href="https://www.linkedin.com/in/zukisa-eric-maza-2376b119b/" target="_blank" style="color: #000;">Let's
                     connect</a>!</p>
               </div>
               <div class="d-grid gap-2 d-md-flex justify-content-center">
@@ -32,7 +31,7 @@
                 </button>
                 <button type="button" class="btn btn-muted btn-lg gap-2">
                   <a class="button-link button-link-linkedin"
-                    href="https://www.linkedin.com/in/eric-zukisa-maza-2376b119b/" target="_blank" style="color: #000;">
+                    href="https://www.linkedin.com/in/zukisa-eric-maza-2376b119b/" target="_blank" style="color: #000;">
                     <i class="bi bi-linkedin" style="font-size: 2em;"></i>
                   </a>
                 </button>
@@ -50,7 +49,6 @@ export default {
   data() {
     return {
       textColor: '#000',
-      colors: ['#FF0000', '#00FF00', '#0000FF', '#FF00FF', '#FFFF00'],
       currentColorIndex: 0,
     };
   },
@@ -60,15 +58,11 @@ export default {
       setTimeout(() => {
         document.querySelector('.welcome-text').classList.add('fade-out');
         document.querySelector('.content-container').classList.add('fade-in');
-      }, 3000);
+      }, 1000);
     }, 1000);
   },
   methods: {
     animateText() {
-      setInterval(() => {
-        this.textColor = this.colors[this.currentColorIndex];
-        this.currentColorIndex = (this.currentColorIndex + 1) % this.colors.length;
-      }, 1000); // Change text color every second
     }
   }
 };
