@@ -28,20 +28,22 @@
             </router-link>
           </li>
           <li class="nav-item dropdown">
-                        <h4 class="nav-item dropdown-toggle" id="
-                            navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Resume
-                        </h4>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><router-link to="/experience" class="dropdown-item">Experience</router-link></li>
-                            <li><router-link to="/skills" class="dropdown-item">Skills</router-link></li>
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <h4 class="nav-text">Resume</h4>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><router-link to="/experience" class="dropdown-item">Experience</router-link></li>
+              <li><router-link to="/skills" class="dropdown-item">Skills</router-link></li>
+            </ul>
+          </li>
 
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-
-                        </ul>
-                    </li>
           <li class="nav-item">
             <router-link to="/project" class="nav-link" @click="collapseNavbar">
               <h4>Projects</h4>
@@ -144,4 +146,18 @@ export default {
 .dark-theme .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+
+@media only screen and (max-width: 767px) {
+  .center-text {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .center-icons {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 </style>

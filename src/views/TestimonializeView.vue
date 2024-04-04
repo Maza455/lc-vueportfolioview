@@ -2,17 +2,41 @@
   <div class="container">
     <h2 class="display-2 text-center mb-5">Testimonials</h2>
     <div class="row">
-      <div v-for="(testimonial, index) in testimonials" :key="index" class="col-lg-6 col-md-6 col-sm-12 mb-4">
+      <div
+        v-for="(testimonial, index) in testimonials"
+        :key="index"
+        class="col-lg-6 col-md-6 col-sm-12 mb-4"
+      >
         <div class="card border-0 shadow-sm testimonial-card">
           <div class="card-body text-center">
-            <div class="spinner" @mouseover="showText = true" @mouseleave="showText = false">
-              <img :src="testimonial.image" :alt="testimonial.name" class="rounded-circle spinner-image"
-                style="width: 150px; height: 150px; object-fit: cover;">
+            <div
+              class="spinner"
+              @mouseover="showText = true"
+              @mouseleave="showText = false"
+            >
+              <div class="like-section">
+                <button class="btn btn-light btn-sm" @click="toggleLike(testimonial.id, index)">
+                  <i class="bi" :class="getLikeIconClass(testimonial.id, index)"></i>
+                </button>
+                <span>{{ testimonial.count }}</span> <!-- Display the updated count for each testimonial card -->
+              </div>
+              <img
+                :src="testimonial.image"
+                :alt="testimonial.name"
+                class="rounded-circle spinner-image"
+                style="width: 150px; height: 150px; object-fit: cover"
+              />
               <div v-if="showText" class="spinner-text">
-                <h5>{{ testimonial.name }} <a :href="testimonial.linkedin" target="_blank"><i
-                      class="bi bi-linkedin"></i></a></h5>
+                <h5>
+                  {{ testimonial.name }}
+                  <a :href="testimonial.linkedin" target="_blank"
+                    ><i class="bi bi-linkedin"></i
+                  ></a>
+                </h5>
                 <h6>{{ testimonial.role }}</h6>
-                <p><em>"{{ testimonial.message }}"</em></p>
+                <p>
+                  <em>"{{ testimonial.message }}"</em>
+                </p>
               </div>
             </div>
           </div>
@@ -26,16 +50,32 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState } from "vuex";
 
 export default {
   data() {
     return {
-      showText: false
+      showText: false,
+      likedTestimonials: [],
+      likesCount: {},
     };
   },
   computed: {
-    ...mapState(['testimonials', 'errorMessage'])
+    ...mapState(["testimonials", "errorMessage"]),
+  },
+  methods: {
+    toggleLike(testimonialId, index) {
+      const testimonial = this.testimonials[index];
+      testimonial.liked = !testimonial.liked;
+      testimonial.liked ? testimonial.count++ : testimonial.count--;
+    },
+    getLikeIconClass(testimonialId, index) {
+      const testimonial = this.testimonials[index];
+      return {
+        'bi-hand-thumbs-up': !testimonial.liked,
+        'bi-hand-thumbs-up-fill': testimonial.liked
+      };
+    }
   },
   mounted() {
     this.$store.dispatch('fetchData')
@@ -45,6 +85,7 @@ export default {
       });
   }
 }
+
 </script>
 
 <style scoped>
@@ -64,11 +105,21 @@ export default {
   display: none;
 }
 
+.spinner-thumb {
+  cursor: pointer;
+}
+
 .spinner:hover .spinner-image {
   transform: rotateY(180deg);
 }
 
 .spinner:hover .spinner-text {
   display: block;
+}
+
+.like-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>

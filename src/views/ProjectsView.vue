@@ -59,47 +59,71 @@ import { mapState } from 'vuex';
 export default {
   computed: {
     projects() {
-            return this.$store.state.projects;
-        },
+      return this.$store.state.projects;
+    },
+
     ...mapState(['homeView', 'aboutMe', 'testimonials', 'projects', 'contact', 'resume'])
   },
+
   mounted() {
+    const reactions = {};
+    for (let i = 0; i < this.projects.length; i++) {
+      const project = this.projects[i];
+      reactions[project.id] = localStorage.getItem(`project-${project.id}-reacted`) === 'true';
+    }
+
+    for (let i = 0; i < this.projects.length; i++) {
+      const project = this.projects[i];
+      project.reacted = reactions[project.id];
+    }
+
     this.$store.dispatch('fetchData');
+
+    window.addEventListener('beforeunload', () => {
+      for (let i = 0; i < this.projects.length; i++) {
+        const project = this.projects[i];
+        localStorage.removeItem(`project-${project.id}-reacted`);
+      }
+    });
   },
+
   methods: {
     openProject(url) {
       this.$router.push({ name: 'Project', params: { projectUrl: url } });
     },
     sortBy(sortType) {
-            if (sortType === 'desc') {
-                this.projects.sort((a, b) => b.title.localeCompare(a.title));
-            } else {
-                this.projects.sort((a, b) => a.title.localeCompare(b.title));
-            }
+      if (sortType === 'desc') {
+        this.projects.sort((a, b) => b.title.localeCompare(a.title));
+      } else {
+        this.projects.sort((a, b) => a.title.localeCompare(b.title));
+      }
     },
     reactToProject(project) {
+      if (localStorage.getItem(`project-${project.id}-reacted`)) {
+        return;
+      }
+
       project.reacted = !project.reacted;
       project.views++;
       if (project.user) {
         project.user.views++;
       }
       if (project.reacted) {
-            project.reactionCount++;
-            document.querySelectorAll('.bi-heart').forEach((icon) => {
-                icon.style.color = 'red';
-            });
-        } else {
-            project.reactionCount--;
-            document.querySelectorAll('.bi-heart').forEach((icon) => {
-                icon.style.color = 'black';
-            });
-        }
+        project.reactionCount++;
+        document.querySelectorAll('.bi-heart').forEach((icon) => {
+          icon.style.color = 'red';
+        });
+      } else {
+        project.reactionCount--;
+      }
+
+      localStorage.setItem(`project-${project.id}-reacted`, true);
     },
     leaveComment(project) {
       let userComment = prompt("Please enter your comment for " +  project.title + ":");
       if (userComment) {
         project.comments.push(userComment);
-        console.log('Comment added for project:', project.title);
+        alert('Comment added for project:', project.title);
       }
     }
   }
