@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-md-4 order-md-2">
           <div class="card border-radius-10px">
-            <a href="https://ibb.co/3h5g031"><img src="https://i.ibb.co/3h5g031/Proctor.jpg" alt="Proctor" border="0"
+            <a href="https://i.ibb.co/3h5g031/Proctor.jpg"><img src="https://i.ibb.co/3h5g031/Proctor.jpg" alt="Proctor" border="0"
                 height="30%"></a>
             <div class="card-body">
               <div class="social-links">
@@ -96,6 +96,7 @@ export default {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  border-radius: 10px;
 }
 
 .card-body {

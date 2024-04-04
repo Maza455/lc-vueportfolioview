@@ -31,24 +31,23 @@
   
   export default {
     computed: {
-    ...mapState(['resume', 'errorMessage'])
-  },
-  mounted() {
-    try {
-      this.$store.dispatch('fetchData');
-    } catch (error) {
-      alert.error('An error occurred while fetching the data: ', error);
-      this.$store.commit('setErrorMessage', 'An error occurred while fetching the data. Please try again later.');
+      ...mapState(['resume', 'errorMessage'])
+    },
+    mounted() {
+      try {
+        this.$store.dispatch('fetchData');
+      } catch (error) {
+        alert.error('An error occurred while fetching the data: ', error);
+        this.$store.commit('setErrorMessage', 'An error occurred while fetching the data. Please try again later.');
+      }
     }
-  }
-};
+  };
   </script>
   
   <style scoped>
   .main-timeline {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr;
     gap: 20px;
     margin-bottom: 40px;
     position: relative;
@@ -56,8 +55,7 @@
   
   .timeline {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: 1fr;
     gap: 20px;
     margin-bottom: 40px;
     position: relative;
@@ -82,38 +80,6 @@
     z-index: 1;
   }
   
-  .timeline .date-outer:before,
-  .timeline .date-outer:after {
-    width: 125px;
-    height: 125px;
-    margin: 0 auto;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    transition: all 0.33s ease-out 0s;
-  }
-  
-  .timeline .date-outer:before {
-    background: #fff;
-    border: 2px solid #232323;
-    left: -6px;
-  }
-  
-  .timeline .date-outer:after {
-    border: 2px solid #c6c6c6;
-    left: 6px;
-  }
-  
-  .timeline .date-outer:hover:before {
-    left: 6px;
-  }
-  
-  .timeline .date-outer:hover:after {
-    left: -6px;
-  }
-  
   .timeline .date {
     width: 100%;
     margin: auto;
@@ -127,17 +93,19 @@
     font-weight: 700;
   }
   
-  .timeline .year {
-    display: block;
-    font-size: 30px;
-    font-weight: 700;
-    color: #232323;
-    line-height: 36px;
-  }
-  
   .timeline .timeline-content {
     padding: 20px;
     float: none;
     width: 100%;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .main-timeline {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .timeline {
+      grid-template-columns: 1fr 1fr;
+    }
   }
   </style>

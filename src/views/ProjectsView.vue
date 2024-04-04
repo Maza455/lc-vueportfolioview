@@ -79,14 +79,28 @@ export default {
     },
     reactToProject(project) {
       project.reacted = !project.reacted;
-      if (project.reacted) {
-        project.reactionCount++;
-      } else {
-        project.reactionCount--;
+      project.views++;
+      if (project.user) {
+        project.user.views++;
       }
+      if (project.reacted) {
+            project.reactionCount++;
+            document.querySelectorAll('.bi-heart').forEach((icon) => {
+                icon.style.color = 'red';
+            });
+        } else {
+            project.reactionCount--;
+            document.querySelectorAll('.bi-heart').forEach((icon) => {
+                icon.style.color = 'black';
+            });
+        }
     },
     leaveComment(project) {
-      console.log('Leaving a comment on project:', project);
+      let userComment = prompt("Please enter your comment for " +  project.title + ":");
+      if (userComment) {
+        project.comments.push(userComment);
+        console.log('Comment added for project:', project.title);
+      }
     }
   }
 }
@@ -143,5 +157,9 @@ export default {
 
 .reaction-icon i {
   margin-right: 5px;
+}
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
 }
 </style>
