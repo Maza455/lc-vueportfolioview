@@ -8,7 +8,7 @@
         <div class="col-md-4 order-md-2">
           <div class="card border-radius-10px">
             <a href="https://i.ibb.co/3h5g031/Proctor.jpg"><img src="https://i.ibb.co/3h5g031/Proctor.jpg" alt="Proctor" border="0"
-                height="30%"></a>
+                height="30%"><h4><b>CyberSecurity<br>Networking<br>Software Engineering<br>Data Science</b></h4></a>
             <div class="card-body">
               <div class="social-links">
                 <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
@@ -35,10 +35,12 @@
                 <br>
                 <span>⭐⭐⭐</span>
                 <p class="card-text">
-                  <small id="purple-myname"><a href="../assets/MazaCV (2023)..K (1).pdf"
-                      download="../assets/MazaCV (2023)..K (1).pdf" target="_blank" class="btn btn-outline-success">
-                      <i class="fa fa-download"></i> Download CV</a></small>
-                </p>
+                <small id="purple-myname">
+                  <a href="../assets/CV/MazaCV (2023)..K (1).pdf" target="_blank" class="btn btn-outline-success">
+                    <i class="fa fa-download"></i> Download CV
+                  </a>
+                </small>
+              </p>
               </div>
             </div>
           </div>

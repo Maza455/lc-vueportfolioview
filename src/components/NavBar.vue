@@ -19,12 +19,12 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <router-link to="/" class="nav-link active" @click="collapseNavbar">
-              <h4>Home</h4>
+              <h4>Home🏠</h4>
             </router-link>
           </li>
           <li class="nav-item">
             <router-link to="/about" class="nav-link" @click="collapseNavbar">
-              <h4>About</h4>
+              <h4>About♣️</h4>
             </router-link>
           </li>
           <li class="nav-item dropdown">
@@ -36,17 +36,17 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <h4 class="nav-text">Resume</h4>
+              <h4 class="nav-text">Resume📜</h4>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><router-link to="/experience" class="dropdown-item">Experience</router-link></li>
-              <li><router-link to="/skills" class="dropdown-item">Skills</router-link></li>
+              <li><router-link to="/experience" class="dropdown-item">Experience🦺</router-link></li>
+              <li><router-link to="/skills" class="dropdown-item">Skills🎭</router-link></li>
             </ul>
           </li>
 
           <li class="nav-item">
             <router-link to="/project" class="nav-link" @click="collapseNavbar">
-              <h4>Projects</h4>
+              <h4>Projects📚</h4>
             </router-link>
           </li>
           <li class="nav-item">
@@ -55,12 +55,12 @@
               class="nav-link"
               @click="collapseNavbar"
             >
-              <h4>Testimonials</h4>
+              <h4>Testimonials⚖️</h4>
             </router-link>
           </li>
           <li class="nav-item">
             <router-link to="/contact" class="nav-link" @click="collapseNavbar">
-              <h4>Reach Me</h4>
+              <h4>Reach Me☎️</h4>
             </router-link>
           </li>
           <li class="nav-item">

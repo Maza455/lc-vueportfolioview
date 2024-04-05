@@ -69,7 +69,7 @@ export default {
     const reactions = {};
     for (let i = 0; i < this.projects.length; i++) {
       const project = this.projects[i];
-      reactions[project.id] = localStorage.getItem(`project-${project.id}-reacted`) === 'true';
+      reactions[project.id] = localStorage.getItem(`project- ${project.id}- reacted`) === 'true';
     }
 
     for (let i = 0; i < this.projects.length; i++) {
@@ -82,7 +82,7 @@ export default {
     window.addEventListener('beforeunload', () => {
       for (let i = 0; i < this.projects.length; i++) {
         const project = this.projects[i];
-        localStorage.removeItem(`project-${project.id}-reacted`);
+        localStorage.removeItem(`project- ${project.id}- reacted`);
       }
     });
   },
@@ -123,7 +123,7 @@ export default {
       let userComment = prompt("Please enter your comment for " +  project.title + ":");
       if (userComment) {
         project.comments.push(userComment);
-        alert('Comment added for project:', project.title);
+        window.alert('Comment added for project:', project.title);
       }
     }
   }

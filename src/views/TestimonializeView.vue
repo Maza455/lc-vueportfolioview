@@ -14,12 +14,6 @@
               @mouseover="showText = true"
               @mouseleave="showText = false"
             >
-              <div class="like-section">
-                <button class="btn btn-light btn-sm" @click="toggleLike(testimonial.id, index)">
-                  <i class="bi" :class="getLikeIconClass(testimonial.id, index)"></i>
-                </button>
-                <span>{{ testimonial.count }}</span> <!-- Display the updated count for each testimonial card -->
-              </div>
               <img
                 :src="testimonial.image"
                 :alt="testimonial.name"
@@ -37,6 +31,12 @@
                 <p>
                   <em>"{{ testimonial.message }}"</em>
                 </p>
+                <div class="like-section">
+                <button class="btn btn-light btn-sm" @click="toggleLike(testimonial.id, index)">
+                  <i class="bi" :class="getLikeIconClass(testimonial.id, index)"></i>
+                </button>
+                <span>{{ testimonial.count }}</span>
+              </div>
               </div>
             </div>
           </div>
