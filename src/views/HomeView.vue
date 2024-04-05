@@ -7,7 +7,7 @@
       <div class="container-fluid content-container">
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-6 order-md-2 col-12">
-            <a href="https://ibb.co/QYFvsx5"><img src="https://i.ibb.co/RQpTLJ5/Maza.jpg" alt="Maza" border="0" style="width: 100%; height: auto;"></a>
+            <a href="https://ibb.co/QYFvsx5"><img src="https://i.ibb.co/RQpTLJ5/Maza.jpg" alt="Maza" border="0" target="_blank" style="width: 90%; height: auto;"></a>
           </div>
           <div class="col-lg-6 col-md-6 col-12">
             <div class="px-4 py-5 text-center text-black">
