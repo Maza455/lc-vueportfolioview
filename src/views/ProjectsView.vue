@@ -186,4 +186,24 @@ export default {
   height: 200px;
   object-fit: cover;
 }
+
+.card-body button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.card-body button {
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-body button:hover {
+  background-color: #212121;
+}
+
 </style>
