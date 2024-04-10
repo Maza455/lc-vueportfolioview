@@ -16,9 +16,9 @@
             <div class="card-body">
               <h5 class="card-title">{{ project.title }}</h5>
               <p class="card-text">{{ project.description }}</p>
-              <button :href="project.githubLink" target="_blank"><button>Github</button></button>
-              <button :href="project.liveDemoLink" target="_blank" @click="openProject(project.liveDemoLink)"><button>{{
-                  project.liveDemoText }}</button></button>
+              <button :href="project.githubLink" target="_blank"><a>Github</a></button>
+              <button :href="project.liveDemoLink" target="_blank" @click="openProject(project.liveDemoLink)"><a>{{
+                  project.liveDemoText }}</a></button>
             </div>
             <div class="card-footer">
               <button type="button" class="btn btn-muted btn-lg px-4 gap-3">
